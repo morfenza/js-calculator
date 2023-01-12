@@ -35,6 +35,10 @@ function operate(a, b, func) {
 
 /* Aux variables */
 let curValue = '';
+let firstValue = 0;
+let secondValue = 0;
+let operatorPressed = false;
+let displayResult = false;
 
 /* Calculator screens */
 const upperScreen = document.querySelector('.upper-screen');
@@ -42,10 +46,94 @@ const bottomScreen = document.querySelector('.bottom-screen');
 
 /* Operator buttons */
 const plusSign = document.querySelector('.plus');
+plusSign.addEventListener('click', () => {
+  if (operatorPressed === false) {
+    // Operator wasn't pressed
+    firstValue = Number(curValue);
+    upperScreen.textContent = `${firstValue} + `;
+    operatorPressed = true;
+
+  } else if (operatorPressed === true && displayResult === false) {
+    // Operator pressed but the second number wasn't pressed yet
+    upperScreen.textContent = `${firstValue} + `;
+
+  } else if (operatorPressed === true && displayResult === true) {
+    // Operator pressed and second number also pressed
+    if (secondValue !== '') {
+      operate(firstValue, secondValue, '+');
+      operatorPressed = false;
+    } 
+  }
+
+});
+
 const minusSign = document.querySelector('.minus');
+minusSign.addEventListener('click', () => {
+  if (operatorPressed === false) {
+    // Operator wasn't pressed
+    firstValue = Number(curValue);
+    upperScreen.textContent = `${firstValue} - `;
+    operatorPressed = true;
+
+  } else if (operatorPressed === true && displayResult === false) {
+    // Operator pressed but the second number wasn't pressed yet
+    upperScreen.textContent = `${firstValue} - `;
+
+  } else if (operatorPressed === true && displayResult === true) {
+    // Operator pressed and second number also pressed
+    if (secondValue !== '') {
+      operate(firstValue, secondValue, '-');
+      operatorPressed = false;
+    } 
+  }
+});
+
 const multiplySign = document.querySelector('.multiply');
+multiplySign.addEventListener('click', () => {
+  if (operatorPressed === false) {
+    // Operator wasn't pressed
+    firstValue = Number(curValue);
+    upperScreen.textContent = `${firstValue} x `;
+    operatorPressed = true;
+
+  } else if (operatorPressed === true && displayResult === false) {
+    // Operator pressed but the second number wasn't pressed yet
+    upperScreen.textContent = `${firstValue} x `;
+
+  } else if (operatorPressed === true && displayResult === true) {
+    // Operator pressed and second number also pressed
+    if (secondValue !== '') {
+      operate(firstValue, secondValue, 'x');
+      operatorPressed = false;
+    } 
+  }
+});
+
 const divideSign = document.querySelector('.divide')
+divideSign.addEventListener('click', () => {
+  if (operatorPressed === false) {
+    // Operator wasn't pressed
+    firstValue = Number(curValue);
+    upperScreen.textContent = `${firstValue} / `;
+    operatorPressed = true;
+
+  } else if (operatorPressed === true && displayResult === false) {
+    // Operator pressed but the second number wasn't pressed yet
+    upperScreen.textContent = `${firstValue} / `;
+
+  } else if (operatorPressed === true && displayResult === true) {
+    // Operator pressed and second number also pressed
+    if (secondValue !== '') {
+      operate(firstValue, secondValue, '/');
+      operatorPressed = false;
+    } 
+  }
+});
+
 const equals = document.querySelector('.equals')
+equals.addEventListener('click', () => {
+
+});
 
 /* Number buttons */
 const number9 = document.querySelector('.nine');
