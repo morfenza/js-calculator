@@ -45,6 +45,7 @@ function clear() {
   curOperator = '';
   operatorPressed = false;
   displayResult = false;
+  pointButton.disabled = false;
   secondValue = 0;
   firstValue = 0;
 }
@@ -58,6 +59,7 @@ function numberClick(n) {
 }
 
 function operatorClick() {
+  pointButton.disabled = false;
   if (operatorPressed === false) {
     // Operator wasn't pressed
     firstValue = Number(curValue);
@@ -81,8 +83,14 @@ function equalsClick() {
       upperScreen.textContent = `${firstValue} ${curOperator}`;
       curValue = '';
       bottomScreen.textContent = '';
+      pointButton.disabled = false;
     }
   } 
+}
+
+function pointClick() {
+  curValue += '.';
+  bottomScreen.textContent = curValue;
 }
 
 function changeSign() {
@@ -115,7 +123,13 @@ const deleteButton = document.querySelector('.delete');
 deleteButton.addEventListener('click', backspace);
 
 const changeSignButton = document.querySelector('.sign-change');
-changeSignButton.addEventListener('click', changeSign)
+changeSignButton.addEventListener('click', changeSign);
+
+const pointButton = document.querySelector('.point')
+pointButton.addEventListener('click', (event) => {
+  pointClick();
+  event.target.disabled = true;
+});
 /* --------- */
 
 /* Operator buttons */
