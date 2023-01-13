@@ -84,6 +84,13 @@ function equalsClick() {
     }
   } 
 }
+
+function changeSign() {
+  aux = Number(curValue);
+  aux *= -1;
+  curValue = aux.toString();
+  bottomScreen.textContent = curValue;
+}
 /* --------- */
 
 /* Aux variables */
@@ -106,6 +113,9 @@ clearButton.addEventListener('click', clear);
 
 const deleteButton = document.querySelector('.delete');
 deleteButton.addEventListener('click', backspace);
+
+const changeSignButton = document.querySelector('.sign-change');
+changeSignButton.addEventListener('click', changeSign)
 /* --------- */
 
 /* Operator buttons */
