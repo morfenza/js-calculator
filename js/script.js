@@ -42,7 +42,7 @@ function clear() {
   curOperator = '';
   upperScreen.textContent = '';
   bottomScreen.textContent = '';
-  curOperator = ''
+  curOperator = '';
   operatorPressed = false;
   displayResult = false;
   secondValue = 0;
@@ -51,7 +51,7 @@ function clear() {
 
 function numberClick(n) {
   if (operatorPressed === true) {
-    displayResult = true
+    displayResult = true;
   }
   curValue += n;
   bottomScreen.textContent += n;
@@ -63,8 +63,8 @@ function operatorClick() {
     firstValue = Number(curValue);
     upperScreen.textContent = `${firstValue} ${curOperator}`;
     operatorPressed = true;
-    curValue = ''
-    bottomScreen.textContent = ''
+    curValue = '';
+    bottomScreen.textContent = '';
 
   } else if (operatorPressed === true && displayResult === false) {
     // Operator pressed but the second number wasn't pressed yet
@@ -76,11 +76,11 @@ function equalsClick() {
   if (operatorPressed === true && displayResult === true) {
     // Operator pressed and second number also pressed
     if (secondValue !== '') {
-      secondValue = Number(curValue)
+      secondValue = Number(curValue);
       firstValue = operate(firstValue, secondValue, curOperator);
-      upperScreen.textContent = `${firstValue} ${curOperator}`
-      curValue = ''
-      bottomScreen.textContent = ''
+      upperScreen.textContent = `${firstValue} ${curOperator}`;
+      curValue = '';
+      bottomScreen.textContent = '';
     }
   } 
 }
@@ -101,39 +101,39 @@ const bottomScreen = document.querySelector('.bottom-screen');
 /* --------- */
 
 /* Misc buttons */
-const clearButton = document.querySelector('.clear')
-clearButton.addEventListener('click', clear)
+const clearButton = document.querySelector('.clear');
+clearButton.addEventListener('click', clear);
 
-const deleteButton = document.querySelector('.delete')
-deleteButton.addEventListener('click', backspace)
+const deleteButton = document.querySelector('.delete');
+deleteButton.addEventListener('click', backspace);
 /* --------- */
 
 /* Operator buttons */
 const plusSign = document.querySelector('.plus');
 plusSign.addEventListener('click', () => {
   curOperator = '+';
-  operatorClick()
+  operatorClick();
   equalsClick();
 });
 
 const minusSign = document.querySelector('.minus');
 minusSign.addEventListener('click', () => {
   curOperator = '-';
-  operatorClick()
+  operatorClick();
   equalsClick();
 });
 
 const multiplySign = document.querySelector('.multiply');
 multiplySign.addEventListener('click', () => {
   curOperator = 'x';
-  operatorClick()
+  operatorClick();
   equalsClick();
 });
 
 const divideSign = document.querySelector('.divide')
 divideSign.addEventListener('click', () => {
   curOperator = '/';
-  operatorClick()
+  operatorClick();
   equalsClick();
 });
 
