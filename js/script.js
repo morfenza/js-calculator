@@ -111,30 +111,30 @@ deleteButton.addEventListener('click', backspace);
 /* Operator buttons */
 const plusSign = document.querySelector('.plus');
 plusSign.addEventListener('click', () => {
+  equalsClick();
   curOperator = '+';
   operatorClick();
-  equalsClick();
 });
 
 const minusSign = document.querySelector('.minus');
 minusSign.addEventListener('click', () => {
+  equalsClick();
   curOperator = '-';
   operatorClick();
-  equalsClick();
 });
 
 const multiplySign = document.querySelector('.multiply');
 multiplySign.addEventListener('click', () => {
+  equalsClick();
   curOperator = 'x';
   operatorClick();
-  equalsClick();
 });
 
 const divideSign = document.querySelector('.divide')
 divideSign.addEventListener('click', () => {
+  equalsClick();
   curOperator = '/';
   operatorClick();
-  equalsClick();
 });
 
 const equals = document.querySelector('.equals');
