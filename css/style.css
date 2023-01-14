@@ -4,14 +4,24 @@ body {
   justify-content: space-between;
   align-items: center;
   min-height: 90vh;
+  background-color: lightgray;
 }
 
 header {
+  margin-top: 50px;;
   padding: 10px;
+  font-size: x-large;
+  font-weight: bold;
 }
 
 footer {
-  
+  font-size: large;
+  font-weight: bold;
+}
+
+a {
+  color: #5350fc;
+  text-decoration: none;
 }
 
 button {
@@ -19,6 +29,58 @@ button {
   margin: 5px;
   font-size: x-large;
   text-align: center;
+  background-color: #0000008c;
+  color: azure;
+  border-radius: 15px;
+  border: 2px solid black;
+  transition-duration: 0.1s;
+}
+
+button:hover {
+  background-color: #000000b0;
+}
+
+button:active {
+  background-color: black;
+}
+
+.operator {
+  background-color: #ff7b00d3;
+}
+
+.operator:hover {
+  background-color: #a34f00dc;
+}
+
+.operator:active {
+  background-color: #693301;
+}
+
+.equals {
+  background-color: #3cce29c9;
+}
+
+.equals:hover {
+  background-color: #288d1be7;
+}
+
+.equals:active {
+  background-color: #195811e7;
+}
+
+.clear,
+.delete {
+  background-color: #e01e1ed3;
+}
+
+.clear:hover,
+.delete:hover {
+  background-color: #ac1717d3;
+}
+
+.clear:active,
+.delete:active {
+  background-color: #881212d3;
 }
 
 .main-container{
@@ -26,8 +88,10 @@ button {
   flex-direction: column;
   padding: 10px;
   min-height: 480px;
-  min-width: 400px;
-  border: 5px solid  black;
+  width: 400px;
+  border: 5px solid  #0000007c;
+  background-color: #000000ab;
+  border-radius: 15px;
 }
 
 .row-1-container,
@@ -40,18 +104,31 @@ button {
 }
 
 .screen {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  border: 2px dotted green;
-  min-height: 120px;
+  min-height: 90px;
+  border: 2px solid #000000;
+  background-color: #b3b3b369;
+  text-align: right;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.upper-screen,
+.bottom-screen {
+  box-sizing: border-box;
+  text-align: right;
+  color: whitesmoke;
+  word-wrap: break-word;
 }
 
 .upper-screen {
-  flex: 1;
-  border: 2px dotted blue;
+  min-height: 40px;
+  font-size: x-large;
 }
 
 .bottom-screen {
-  flex: 2;
-  border: 2px dotted red;
+  min-height: 50px;
+  font-size: xx-large;
 }
